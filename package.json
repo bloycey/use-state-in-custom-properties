@@ -1,0 +1,38 @@
+{
+  "name": "use-state-in-custom-properties",
+  "version": "1.0.1",
+  "description": "A starter for creating a new React hook",
+  "author": {
+    "name": "Andrew Bloyce",
+    "email": "hello@colbyfayock.com",
+    "url": "https://twitter.com/colbyfayock"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "react-hooks"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir .",
+    "bump": "npm version",
+    "example": "cd example && yarn install && yarn package",
+    "prepublishOnly": "yarn build",
+    "watch": "nodemon --watch src --exec \"yarn build\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
+    "nodemon": "^2.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colbyfayock/use-state-in-custom-properties"
+  },
+  "bugs": {
+    "url": "https://github.com/colbyfayock/use-state-in-custom-properties/issues"
+  }
+}
