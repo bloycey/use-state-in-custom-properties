@@ -18,12 +18,12 @@ const Example = () => {
   return (
     <CustomPropertiesWrapper>
       <h1>Active Color: {activeColor}</h1>
-			<button onClick={() => setActiveColor("red")}>
-				Change to bed
-			</button>
-			<button onClick={() => setActiveColor("blue")}>
-				Change to blue
-			</button>
+	<button onClick={() => setActiveColor("red")}>
+		Change to bed
+	</button>
+	<button onClick={() => setActiveColor("blue")}>
+		Change to blue
+	</button>
     <CustomPropertiesWrapper>
   )
 }
