@@ -1,37 +1,31 @@
 {
 	"name": "use-state-in-custom-properties",
-	"version": "1.0.2",
-	"description": "Pass your data through as custom properties to your CSS",
-	"author": {
-		"name": "Andrew Bloyce",
-		"email": "bloyce1990@gmail.com"
-	},
-	"keywords": [
-		"react",
-		"hooks",
-		"react-hooks"
-	],
+	"version": "1.0.6",
+	"description": "Makes your react state accessible through CSS properties.",
 	"main": "index.js",
 	"scripts": {
-		"build": "babel src --out-dir .",
-		"bump": "npm version",
-		"example": "cd example && yarn install && yarn package",
-		"prepublishOnly": "yarn build",
-		"watch": "nodemon --watch src --exec \"yarn build\""
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "./node_modules/.bin/babel src --out-file index.js"
 	},
+	"author": "Andrew Bloyce",
 	"license": "MIT",
-	"devDependencies": {
-		"@babel/cli": "^7.12.10",
-		"@babel/core": "^7.12.10",
-		"@babel/preset-env": "^7.12.10",
-		"@babel/preset-react": "^7.12.10",
-		"nodemon": "^2.0.6"
+	"peerDependencies": {
+		"react": "^16.13.1"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/bloycey/use-state-in-custom-properties"
 	},
-	"bugs": {
-		"url": "https://github.com/bloycey/use-state-in-custom-properties/issues"
-	}
+	"devDependencies": {
+		"@babel/cli": "^7.10.5",
+		"@babel/core": "^7.11.1",
+		"@babel/preset-env": "^7.11.0",
+		"@babel/preset-react": "^7.10.4",
+		"react": "^16.13.1"
+	},
+	"keywords": [
+		"CSS",
+		"Custom Properties",
+		"React"
+	]
 }
