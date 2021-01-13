@@ -68,7 +68,7 @@ var ThemeWrapper = function ThemeWrapper(_ref4) {
   };
 
   var useStyleSync = function useStyleSync(name, val) {
-    useEffect(function () {
+    (0, _react.useEffect)(function () {
       if (styles[name] !== val) {
         setStyle(name, val);
       }
