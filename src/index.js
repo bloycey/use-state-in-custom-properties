@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React, { useState, useEffect, createContext } from "react";
 
 export const useStateInCustomProperties = (className, propertiesObject) => {
 	return ({ children }) => {
