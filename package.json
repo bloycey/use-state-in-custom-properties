@@ -1,6 +1,6 @@
 {
 	"name": "use-state-in-custom-properties",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "Makes your react state accessible through CSS properties.",
 	"main": "index.js",
 	"scripts": {

@@ -1,13 +1,17 @@
 "use strict";
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports["default"] = exports.ThemeWrapper = exports.ThemeContext = exports.useStateInCustomProperties = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -44,5 +48,42 @@ var useStateInCustomProperties = function useStateInCustomProperties(className, 
   };
 };
 
+exports.useStateInCustomProperties = useStateInCustomProperties;
+var ThemeContext = /*#__PURE__*/(0, _react.createContext)();
+exports.ThemeContext = ThemeContext;
+
+var ThemeWrapper = function ThemeWrapper(_ref4) {
+  var themeStyles = _ref4.themeStyles,
+      children = _ref4.children;
+
+  var _useState = (0, _react.useState)(themeStyles),
+      _useState2 = _slicedToArray(_useState, 2),
+      styles = _useState2[0],
+      setStyles = _useState2[1];
+
+  var CustomPropertiesWrapper = useStateInCustomProperties(".theme-wrapper", styles);
+
+  var setStyle = function setStyle(styleVarName, newValue) {
+    return setStyles(_objectSpread(_objectSpread({}, styles), {}, _defineProperty({}, styleVarName, newValue)));
+  };
+
+  var useStyleSync = function useStyleSync(name, val) {
+    useEffect(function () {
+      if (styles[name] !== val) {
+        setStyle(name, val);
+      }
+    }, [val, name]);
+  };
+
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(ThemeContext.Provider, {
+    value: {
+      setStyle: setStyle,
+      styles: styles,
+      useStyleSync: useStyleSync
+    }
+  }, /*#__PURE__*/_react["default"].createElement(CustomPropertiesWrapper, null, children)));
+};
+
+exports.ThemeWrapper = ThemeWrapper;
 var _default = useStateInCustomProperties;
 exports["default"] = _default;
