@@ -9,7 +9,7 @@ The useStateInCustomProperties hook takes 2 arguments:
 1. A class name for the wrapping div. (String)
 2. An object containing the state names and values you'd like piped in as CSS variables. (Object)
 
-```
+```jsx
 import useStateInCustomProperties from "use-state-in-custom-properties";
 
 const Example = () => {
@@ -32,7 +32,7 @@ const Example = () => {
 
 And somewhere in a CSS file.
 
-```
+```css
 .box {
   background-color: var(--activeColor)
 }
