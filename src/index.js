@@ -24,7 +24,7 @@ export const ThemeWrapper = ({ themeStyles, children }) => {
 	const [styles, setStyles] = useState(themeStyles);
 
 	const CustomPropertiesWrapper = useStateInCustomProperties(
-		".theme-wrapper",
+		"theme-wrapper",
 		styles
 	);
 

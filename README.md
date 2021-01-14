@@ -5,6 +5,7 @@ This hook was inspired by [this article by Chris Coyier.](https://css-tricks.com
 ## Usage
 
 The useStateInCustomProperties hook takes 2 arguments:
+
 1. A class name for the wrapping div. (String)
 2. An object containing the state names and values you'd like piped in as CSS variables. (Object)
 

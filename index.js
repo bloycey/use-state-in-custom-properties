@@ -61,7 +61,7 @@ var ThemeWrapper = function ThemeWrapper(_ref4) {
       styles = _useState2[0],
       setStyles = _useState2[1];
 
-  var CustomPropertiesWrapper = useStateInCustomProperties(".theme-wrapper", styles);
+  var CustomPropertiesWrapper = useStateInCustomProperties("theme-wrapper", styles);
 
   var setStyle = function setStyle(styleVarName, newValue) {
     return setStyles(_objectSpread(_objectSpread({}, styles), {}, _defineProperty({}, styleVarName, newValue)));
